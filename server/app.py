@@ -17,6 +17,7 @@ migrate = Migrate(app, db)
 db.init_app(app)
 
 api = Api(app)
+#If a user is not signed in, the get() methods in each view should return a status code of 401 unauthorized, along with an error message.
 @app.before_request
 def check_if_logged_in():
     open_access = [
